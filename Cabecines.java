@@ -6,13 +6,18 @@ package ejerciciosClases.actividadTema7;
  * Clase hija de la clase Extratarrestre
  *
  */
-public class Cabecines extends Extratarrestre{
+public class Cabecines extends Extratarrestre implements OcupaEspacio{
 	// Variables finales constantes que no podran ser modificadas una vez inicializadas
 	public static final String NOMBRE_RAZA = "Cabecines";
 	public static final int ESPACIO_OCUPADO = 1;
 
 	// Constructo vacio
 	public Cabecines() {}
+	
+	// Constructor con los atributos nombre y colorPiel de la clase padre
+	public Cabecines(String nombre, String colorPiel) {
+		super(nombre, colorPiel); // Atributos heredados de la super clase
+	}
 	
 	// Constructor con todos sus atributos, estableciendo su raza y espacio con los valores finales
 	public Cabecines(String nombre, String colorPiel, String raza, int espacioOcupado) {
@@ -32,5 +37,13 @@ public class Cabecines extends Extratarrestre{
 	@Override
 	public void estresar() {
 		setColorPiel("rojo");
+	}
+	
+	/**
+	 * Metodo que implementa el metodo que hereda de la interface OcupadoEspacio
+	 */
+	@Override
+	public int obtenerEspacio() {
+		return this.ESPACIO_OCUPADO;
 	}
 }

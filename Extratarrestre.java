@@ -6,16 +6,22 @@ package ejerciciosClases.actividadTema7;
  * Clase que contiene los atributos comunes de un extratarrestre
  *
  */
-public class Extratarrestre {
+public abstract class Extratarrestre {
 
 	// Atributos comunes
 	private String nombre;
 	private String colorPiel;
-	private String raza;
-	private int espacioOcupado;
+	private String raza = "extraterrestre";
+	private int espacioOcupado = 1;
 	
 	// Constructor vacio
 	public Extratarrestre() {}
+	
+	// Constructor con los atributos nombre y colorPiel
+	public Extratarrestre(String nombre, String colorPiel) {
+		this.nombre = nombre;
+		this.colorPiel = colorPiel;
+	}
 	
 	// Constructor con todos los atributos de la clase
 	public Extratarrestre(String nombre, String colorPiel, String raza, int espacioOcupado) {
@@ -61,6 +67,7 @@ public class Extratarrestre {
 	/**
 	 * Metodo para estresar que tendran que implementar las subclases
 	 */
-	public void estresar() {}
+	public abstract void estresar();
+	
 	
 }
